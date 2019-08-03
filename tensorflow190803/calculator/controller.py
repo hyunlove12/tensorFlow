@@ -1,22 +1,17 @@
 from calculator.model import CalculatorModel
 
 class CalculatorController:
-    def __init__(self):
-        self.num1 = int(input('숫자를  입력하세요 \n'))
-        self.num2 = int(input('숫자를  입력하세요 \n'))
-        self.op = input('연산자를 입력하세요 \n')
-        self.calc = CalculatorModel(self.num1, self.num2)
+    def __init__(self, num1, num2, op):
+        self.op = op
+        self.calc = CalculatorModel(num1, num2)
 
     def execute(self):
         if self.op == '+':
-            result = self.calc.add(self.num1,self.num2)
-            print(result)
+            result = self.calc.add()
         elif self.op == '-':
-            result = self.calc.sub(self.num1, self.num2)
-            print(result)
+            result = self.calc.sub()
         elif self.op == '*':
-            result = self.calc.mul(self.num1, self.num2)
-            print(result)
+            result = self.calc.mul()
         elif self.op == '/':
-            result = self.calc.div(self.num1, self.num2)
-            print(result)
+            result = self.calc.div()
+        return result

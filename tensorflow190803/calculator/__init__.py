@@ -8,6 +8,10 @@ if __name__ == '__main__':
     print('계산결과 %d' % result)
 '''
 if __name__ == '__main__':
-    calc = CalculatorController()
-    calc.execute()
+    num1 = int(input('숫자를  입력하세요 \n'))
+    num2 = int(input('숫자를  입력하세요 \n'))
+    op = input('연산자를 입력하세요 \n')
+    calc = CalculatorController(num1, num2, op)
+    result = calc.execute()
+    print('결과 : %d' %result)
 
