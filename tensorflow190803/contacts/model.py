@@ -1,18 +1,24 @@
+from contacts.contact import Contact
 class ContactsModel:
-    def __init__(self, name, phone, addr, email):
-        self.name_ = name
-        self.phone_ = phone
-        self.addr_ = addr
-        self.email_ = email
-
-    def set_contact(self, name, phone, addr, email):
-        contact = ContactsModel(name, phone, addr, email)
+    def __init__(self):
+        pass
+    #self를 사용하지 않으면 삭제 후 @staticmethod를 붙여준다
+    #self -> instance 메소드
+    @staticmethod
+    def set_contact(name, phone, email, addr):
+        contact = Contact(name, phone, email, addr)
         return contact
 
-    def print_info(self):
-        str = '이름 : {} \n 전화번호 : {} \n 주소 : {} \n 이메일 : {} '\
-                .format(self.name, self.phone, self.email, self.addr)
-    def get_contacts(self):
-        for i in list:
-            print(i.print_info)
+    @staticmethod
+    def get_contacts(params):
+        contacts = []
+        for i in params:
+            contacts.append(i.to_string())
+        #들여쓰기 조심
+        return ''.join(contacts)
 
+    @staticmethod
+    def del_contact(params, name):
+        for i, t in enumerate(params):
+            if t.name == name:
+                del params[i]
